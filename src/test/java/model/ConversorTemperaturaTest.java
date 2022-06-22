@@ -2,8 +2,9 @@ package model;
 
 import org.junit.Before;
 import org.junit.Test;
+import validacion.RegexInput;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class ConversorTemperaturaTest {
     private UnidadDeMedida celsius;
@@ -38,12 +39,12 @@ public class ConversorTemperaturaTest {
     }
 
     @Test
-    public void convertir32CelsiusACelcius() {
-        celsius.setValor(32.0);
+    public void convertirMenos32CelsiusACelcius() {
+        celsius.setValor(-32.0);
         UnidadDeMedida resultado = conversor.convertirUnidad(celsius, celsius);
 
         assertEquals("La unidad de medida de la conversion debería ser Celsius","Celsius", resultado.getNombre());
-        assertEquals("El valor de la conversion debería ser 32.0", 32.0, resultado.getValor(), 0.0);
+        assertEquals("El valor de la conversion debería ser -32.0", -32.0, resultado.getValor(), 0.0);
     }
 
     @Test
@@ -65,12 +66,12 @@ public class ConversorTemperaturaTest {
     }
 
     @Test
-    public void convertir78FahrenheitAFahrenheit() {
-        fahrenheit.setValor(78.0);
+    public void convertirMenos78FahrenheitAFahrenheit() {
+        fahrenheit.setValor(-78.0);
         UnidadDeMedida resultado = conversor.convertirUnidad(fahrenheit, fahrenheit);
 
         assertEquals("La unidad de medida de la conversion debería ser Fahrenheit", "Fahrenheit", resultado.getNombre());
-        assertEquals("El valor de la conversion debería ser 78.0", 78.0, resultado.getValor(), 0.0);
+        assertEquals("El valor de la conversion debería ser -78.0", -78.0, resultado.getValor(), 0.0);
     }
 
     @Test
@@ -92,11 +93,11 @@ public class ConversorTemperaturaTest {
     }
 
     @Test
-    public void convertir356KelvinAKelvin() {
-        kelvin.setValor(356.0);
+    public void convertirMenos356KelvinAKelvin() {
+        kelvin.setValor(-356.0);
         UnidadDeMedida resultado = conversor.convertirUnidad(kelvin, kelvin);
 
         assertEquals("La unidad de medida de la conversion debería ser Kelvin", "Kelvin", resultado.getNombre());
-        assertEquals("El valor de la conversion debería ser 356.0", 356.0, resultado.getValor(), 0.0);
+        assertEquals("El valor de la conversion debería ser -356.0", -356.0, resultado.getValor(), 0.0);
     }
 }
