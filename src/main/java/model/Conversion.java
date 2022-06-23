@@ -20,6 +20,10 @@ public class Conversion {
     }
 
     public Double convertir(Double cantidad, Double moneda) {
-        return cantidad * moneda;
+        return getTwoDecimals(cantidad * moneda);
+    }
+
+    private static Double getTwoDecimals(double value) {
+        return Math.round(value *100.0)/100.0;
     }
 }
