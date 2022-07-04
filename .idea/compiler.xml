@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
-      <module name="challengeOracleOne5-java-conversor" target="1.8" />
+      <module name="challengeOracleOne5-java-conversor" target="1.8.0_321" />
     </bytecodeTargetLevel>
   </component>
 </project>
